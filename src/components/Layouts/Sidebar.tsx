@@ -1,31 +1,32 @@
 import React from 'react'
 import { Menu } from "antd";
+import { UploadOutlined, UserOutlined, VideoCameraOutlined } from '@ant-design/icons';
+import { flattenRoutes } from '../../utils/handleRoutes';
+import rootRouter from '../../routers';
 
 export default function Sidebar() {
-    const items2 = [].map((icon, index) => {
-        const key = String(index + 1);
-        return {
-            key: `sub${key}`,
-            label: `subnav ${key}`,
-            children: new Array(4).fill(null).map((_, j) => {
-                const subKey = index * 4 + j + 1;
-                return {
-                    key: subKey,
-                    label: `option${subKey}`,
-                };
-            }),
-        };
-    });
+    const routesToMenuItems = () => {
+        const routes = flattenRoutes(rootRouter[0].children);
+        console.log("menus", routes);
+        const menus = [];
+        for(let i = 0; i < routes.length; i++) {
+            if(routes[i].hasChildren){
+
+            }
+        }
+        return routes
+    }
+
+    const routesToSubMenuItems = (route:any) => {
+        
+    }
+
     return (
         <Menu
+            className="sidebar"
             mode="inline"
-            defaultSelectedKeys={['1']}
-            defaultOpenKeys={['sub1']}
-            style={{
-                height: '100%',
-                borderRight: 0,
-            }}
-            items={items2}
-        />
+        >
+            {/* {routesToMenuItems()} */}
+        </Menu>
     )
 }

@@ -3,9 +3,17 @@ import React, { useState } from 'react'
 
 export default function Sider(props:any) {
         const [collapsed, setCollapsed] = useState(false);
+        console.log(props.children);
     return (
         <Layout.Sider
-   collapsed={collapsed}
+      breakpoint="lg"
+      collapsedWidth="0"
+      onBreakpoint={(broken) => {
+        console.log(broken);
+      }}
+      onCollapse={(collapsed, type) => {
+        console.log(collapsed, type);
+      }}
         >
              {props.children}
         </Layout.Sider>
