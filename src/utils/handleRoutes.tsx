@@ -6,6 +6,6 @@ export const flattenRoutes = (arr:any) =>
         prev.push(item);
     }
     return prev.concat(
-      Array.isArray(item.routes) ? flattenRoutes(item.routes) : []
+      Array.isArray(item.children) ? flattenRoutes(item.children) : item
     );
   }, []);

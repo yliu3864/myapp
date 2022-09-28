@@ -13,19 +13,39 @@ import rootRouter from '../../routers';
 export default function Sidebar() {
     const routesToMenuItems = () => {
         const routes = flattenRoutes(rootRouter[0].children);
+        console.log(routes);
+
         const menus = [];
         for (let i = 0; i < routes.length; i++) {
             if (routes[i].hasChildren) {
+                menus.push(routesToSubMenuItems(routes[i]));
+                console.log(routesToSubMenuItems(routes[i]));
+                i += routes[i].children.length;
+                console.log(i);
 
+            } else {
+
+                menus.push(<Menu.Item key={routes[i].key} icon={routes[i].icon}>{routes[i].name}</Menu.Item>);
             }
         }
-        return routes
+        console.log(menus);
+        return menus
     }
 
     const routesToSubMenuItems = (route: any) => {
+        console.log("route", route);
+        return (
+            <Menu.SubMenu key={route.key}
+                title={route.name}
+                icon={route.icon}
+            >
+                {route.children.map((child: any) => <Menu.Item key={child.key}>{child.name} </Menu.Item>)}
+            </Menu.SubMenu>
 
+        )
     }
-    function getItem(label?:any, key?:any, icon?:any, children?:any) {
+
+    function getItem(label?: any, key?: any, icon?: any, children?: any) {
         return {
             key,
             icon,
@@ -45,8 +65,17 @@ export default function Sidebar() {
         getItem('Files', '9', <FileOutlined />),
     ];
 
-
+    routesToMenuItems();
+    // return (
+    //  <Menu theme='light' className="sidebar" defaultSelectedKeys={['1']} mode="inline" items={items} />
+    // )
     return (
-     <Menu theme='light' className="sidebar" defaultSelectedKeys={['1']} mode="inline" items={items} />
+        <Menu
+            className="sidebar"
+            mode="inline"
+            theme='light'
+        >
+            {routesToMenuItems()}
+        </Menu>
     )
 }

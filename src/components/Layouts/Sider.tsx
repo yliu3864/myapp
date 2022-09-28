@@ -4,7 +4,6 @@ import "../../styles/Sider.scss";
 
 export default function Sider(props: any) {
   const [collapsed, setCollapsed] = useState(false);
-  console.log(props.children);
   return (
     <Layout.Sider
       collapsible
