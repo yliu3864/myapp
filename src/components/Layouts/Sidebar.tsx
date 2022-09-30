@@ -9,8 +9,14 @@ import {
 } from '@ant-design/icons';
 import { flattenRoutes } from '../../utils/handleRoutes';
 import rootRouter from '../../routers';
+import { useNavigate, useLocation } from "react-router-dom";
 
 export default function Sidebar() {
+    const navigate = useNavigate();
+    const onSelect = (key:any) =>{
+        navigate(key.key);
+    }
+
     const routesToMenuItems = () => {
         const routes = flattenRoutes(rootRouter[0].children);
         console.log(routes);
@@ -19,16 +25,12 @@ export default function Sidebar() {
         for (let i = 0; i < routes.length; i++) {
             if (routes[i].hasChildren) {
                 menus.push(routesToSubMenuItems(routes[i]));
-                console.log(routesToSubMenuItems(routes[i]));
                 i += routes[i].children.length;
-                console.log(i);
-
             } else {
 
                 menus.push(<Menu.Item key={routes[i].key} icon={routes[i].icon}>{routes[i].name}</Menu.Item>);
             }
         }
-        console.log(menus);
         return menus
     }
 
@@ -44,36 +46,12 @@ export default function Sidebar() {
 
         )
     }
-
-    function getItem(label?: any, key?: any, icon?: any, children?: any) {
-        return {
-            key,
-            icon,
-            children,
-            label,
-        };
-    }
-    const items = [
-        getItem('Option 1', '1', <PieChartOutlined />),
-        getItem('Option 2', '2', <DesktopOutlined />),
-        getItem('User', 'sub1', <UserOutlined />, [
-            getItem('Tom', '3'),
-            getItem('Bill', '4'),
-            getItem('Alex', '5'),
-        ]),
-        getItem('Team', 'sub2', <TeamOutlined />, [getItem('Team 1', '6'), getItem('Team 2', '8')]),
-        getItem('Files', '9', <FileOutlined />),
-    ];
-
-    routesToMenuItems();
-    // return (
-    //  <Menu theme='light' className="sidebar" defaultSelectedKeys={['1']} mode="inline" items={items} />
-    // )
     return (
         <Menu
             className="sidebar"
             mode="inline"
             theme='light'
+            onSelect={onSelect}
         >
             {routesToMenuItems()}
         </Menu>

@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import "../../styles/Sider.scss";
 
 export default function Sider(props: any) {
-  const [collapsed, setCollapsed] = useState(false);
+  const [collapsed, setCollapsed] = useState(false);  
   return (
     <Layout.Sider
       collapsible
