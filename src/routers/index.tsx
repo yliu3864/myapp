@@ -27,9 +27,10 @@ const rootRouter = [
         element: <MainLayout />,
         children: [
             {
-                index: true,
+                index: false,
                 name: "Dashboard",
-                key: '/',
+                key: '/dashboard',
+                path: "dashboard",
                 icon: <DashboardOutlined />,
                 element: <Home />
             },

@@ -13,7 +13,7 @@ import { getKeyName } from "../../../utils/handleRoutes";
 const initPane =
 {
     title: 'Home',
-    key: '/',
+    key: '/dashboard',
     content: <Home />,
     closable: false,
     path: '/',
