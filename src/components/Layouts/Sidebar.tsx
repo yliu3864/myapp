@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from "react";
 import { Menu } from "antd";
 import {
     DesktopOutlined,
@@ -13,10 +13,11 @@ import { useNavigate, useLocation } from "react-router-dom";
 
 export default function Sidebar() {
     const navigate = useNavigate();
+    const { pathname } = useLocation();
     const onSelect = (key:any) =>{
         navigate(key.key);
     }
-
+    const [currKeys, setcurrKeys] = useState(['dashboard'])
     const routesToMenuItems = () => {
         const routes = flattenRoutes(rootRouter[0].children);
         console.log(routes);
@@ -46,11 +47,18 @@ export default function Sidebar() {
 
         )
     }
+
+    useEffect(() => {
+        setcurrKeys([pathname])
+    }, [pathname])
+
     return (
         <Menu
             className="sidebar"
             mode="inline"
             theme='light'
+            defaultSelectedKeys = {currKeys}
+            selectedKeys={currKeys}
             onSelect={onSelect}
         >
             {routesToMenuItems()}

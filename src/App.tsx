@@ -2,7 +2,7 @@ import React from 'react';
 import { useRoutes } from "react-router-dom";
 import './App.css';
 import  rootRouter from './routers'
-import "antd/dist/antd.css";
+import 'antd/dist/antd.min.css'
 
 function App() {
   const routes = useRoutes(rootRouter);
