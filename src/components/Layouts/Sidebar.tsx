@@ -20,8 +20,6 @@ export default function Sidebar() {
     const [currKeys, setcurrKeys] = useState(['dashboard'])
     const routesToMenuItems = () => {
         const routes = flattenRoutes(rootRouter[0].children);
-        console.log(routes);
-
         const menus = [];
         for (let i = 0; i < routes.length; i++) {
             if (routes[i].hasChildren) {
