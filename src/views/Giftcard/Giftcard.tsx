@@ -24,7 +24,6 @@ export default function Giftcard() {
                 });
             }
             setTableData(data);
-            console.log(data);
             
         })
     }

@@ -25,7 +25,6 @@ export default function Coupon() {
                 });
             }
             setTableData(data);
-            console.log(data);
             
         })
     }

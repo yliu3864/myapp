@@ -24,7 +24,6 @@ export default function Groupon() {
                 });
             }
             setTableData(data);
-            console.log(data);
             
         })
     }
