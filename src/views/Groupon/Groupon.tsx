@@ -14,7 +14,7 @@ export default function Groupon() {
     async function getAllGroups() {
         await cardsApi.getAllCards('Groupon').then((res: any) => {
             const { products } = res.data.result.products;
-            let data: DataType[] = [];
+            const data: DataType[] = [];
             for (const itm of products) {
                 data.push({
                     key: itm.id,

@@ -17,6 +17,9 @@ export default function Navbar() {
             key: "/login",
             icon: <LoginOutlined />,
             label: "Login",
+            onClick: () => {
+            navigate("/auths/login");
+            },
         }
     ]
     return (

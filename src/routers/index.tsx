@@ -18,6 +18,9 @@ const Giftcard = loadable(() => import("../views/Giftcard/Giftcard"), {
 const Groupon = loadable(() => import("../views/Groupon/Groupon"), {
     fallback: <Loading />
 })
+const Auths = loadable(() => import("../views/Auths"), {
+    fallback: <Loading />
+})
 
 const rootRouter = [
     {
@@ -66,7 +69,32 @@ const rootRouter = [
                 ]
             }
         ]
-    }
+    },
+    {
+        index: false,
+        path: "auths",
+        label: "Auths",
+        key: "/auths",
+        clickable: false,
+        children: [
+            {
+                index: false,
+                clickable: false,
+                path: "login",
+                label: "Login",
+                key: "/auths/login",
+                element: <Auths />,
+            },
+            {
+                index: false,
+                clickable: false,
+                path: "signup",
+                label: "Signup",
+                key: "/auths/signup",
+                element: <Auths />,
+            },
+        ],
+    },
 ]
 
 export default rootRouter;

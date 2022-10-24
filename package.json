@@ -8,6 +8,7 @@
     "@babel/preset-env": "^7.19.4",
     "@babel/preset-react": "^7.18.6",
     "@loadable/component": "^5.15.2",
+    "@reduxjs/toolkit": "^1.8.6",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
@@ -17,14 +18,18 @@
     "@types/react-dom": "^18.0.6",
     "antd": "^4.23.2",
     "axios": "^0.27.2",
+    "i18next": "^22.0.2",
+    "i18next-browser-languagedetector": "^6.1.8",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-highlight-words": "^0.18.0",
+    "react-i18next": "^12.0.0",
+    "react-redux": "^8.0.4",
     "react-router-dom": "^6.4.1",
     "react-scripts": "5.0.1",
     "sass": "^1.55.0",
     "sass-loader": "^13.0.2",
-    "typescript": "^4.8.3",
+    "typescript": "^4.8.4",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
@@ -53,6 +58,10 @@
   },
   "devDependencies": {
     "@types/loadable__component": "^5.13.4",
-    "@types/react-highlight-words": "^0.16.4"
+    "@types/react-highlight-words": "^0.16.4",
+    "@typescript-eslint/eslint-plugin": "^5.41.0",
+    "@typescript-eslint/parser": "^5.41.0",
+    "eslint": "^8.26.0",
+    "eslint-config-prettify-base": "^0.1.8"
   }
 }

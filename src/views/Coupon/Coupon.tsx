@@ -15,7 +15,7 @@ export default function Coupon() {
     async function getAllGroups() {
         await cardsApi.getAllCards('Coupon').then((res: any) => {
             const { products } = res.data.result.products;
-            let data: DataType[] = [];
+            const data: DataType[] = [];
             for (const itm of products) {
                 data.push({
                     key: itm.id,
