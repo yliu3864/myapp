@@ -1,0 +1,83 @@
+.auth-form {
+  width: 50%;
+  margin-top: 3rem;
+  margin: auto;
+  padding-top: 15vh;
+  .formItem {
+    border-radius: 6px;
+    overflow: hidden;
+    margin-top: 0.8rem;
+    border: 1px #ddd solid;
+    background-color: #fff;
+  }
+
+  .getCodebtn {
+    border-radius: 6px;
+    overflow: hidden;
+    border: 1px solid #ccc;
+
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .remember-action {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 22px;
+
+    .forget-pw {
+      cursor: pointer;
+    }
+  }
+
+  .action-bar {
+    display: flex;
+    margin-top: 1rem;
+    align-items: center;
+    justify-content: space-between;
+
+    .auth-btn {
+      color: #fff;
+      padding: 0.5rem 4rem;
+      border-radius: 4px;
+      text-align: center;
+      cursor: pointer;
+      background-color: blue;
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 24px;
+    }
+
+    .auth-btn-disabled {
+      opacity: 0.5;
+    }
+  }
+
+  .quickSignin {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+
+    .signintext {
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 24px;
+    }
+
+    .quickSigninSection {
+      visibility: hidden;
+
+      span:not(:first-child) {
+        margin-left: 8px;
+        cursor: pointer;
+      }
+    }
+  }
+}

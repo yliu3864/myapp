@@ -15,8 +15,8 @@ export default function Login(props:any) {
     async function signIn() {
         await loginForm.validateFields();
         const { userNameLogin, passwordLogin } = loginForm.getFieldsValue();
-        // const result = await onLogin(userNameLogin, passwordLogin);
-        // console.log('result ', result)
+        const result = await onLogin(userNameLogin, passwordLogin);
+        console.log('result ', result)
     }
 
     return (
@@ -106,7 +106,7 @@ export default function Login(props:any) {
                     onClick={() => signIn()}
                     style={{ width: "100%" }}
                 >
-                    {"login"}
+                   login
                 </div>
             </div>
         </Form>
